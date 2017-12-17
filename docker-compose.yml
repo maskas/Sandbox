@@ -7,3 +7,14 @@ services:
       - '27017:27017'
     volumes:
       - './volume/mongo/data:/data/db'
+  rest-mock:
+    image: "node:8"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./RestMock:/home/node/app
+    ports:
+      - "8081:8081"
+    command: "npm start"

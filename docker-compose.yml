@@ -17,4 +17,4 @@ services:
       - ./RestMock:/home/node/app
     ports:
       - "8081:8081"
-    command: "npm start"
+    command: "node_modules/nodemon/bin/nodemon.js server.js"
